@@ -4,6 +4,14 @@
 
 技能**不包含**维护手册正文，只教如何找到名为「使用说明」的章节并照做。手册规则、授权与归属约定始终以 Notion 现场为准；你改 Notion 或改手册时，不必同步改本仓库正文。
 
+## 默认行为
+
+- **只点名本技能、没有其它提示词**（例如 `/notion-maintenance-skill`）：收集当前对话与近期相关对话，再按「使用说明」更新 AI 工作台。
+- **技能名之外还有具体要求**：按那些提示词执行，不自动扩大成全工作台同步。
+- **未点名本技能**：不会因本技能而主动同步。
+
+详细流程见 [默认：从对话更新工作台](references/default-workbench-sync.md)。
+
 ## 使用条件
 
 - AI 客户端能够加载技能说明，并支持调用 Notion MCP（搜索、读取、更新等）。
@@ -28,7 +36,8 @@ npx skills add wliafe/notion-maintenance-skill
 
 ## 使用示例
 
-- “按手册整理知识库里和本次任务相关的部分。”
+- `/notion-maintenance-skill`（仅点名）：从当前与近期对话默认同步 AI 工作台。
+- `/notion-maintenance-skill 整理知识库里和本次任务相关的部分。`：按提示词执行，不自动全量同步。
 - “更新工作方式里对应条目前，先读使用说明再改。”
 - “在项目页补实验记录，按使用说明写并回读核对。”
 - “Notion 里找不到使用说明时，说明你是怎么找的。”
@@ -51,7 +60,8 @@ notion-maintenance-skill/
 ├── SKILL.md
 ├── references/
 │   ├── mcp-setup.md
-│   └── finding-usage-guide.md
+│   ├── finding-usage-guide.md
+│   └── default-workbench-sync.md
 ├── README.md
 └── LICENSE
 ```
