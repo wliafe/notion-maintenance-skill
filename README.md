@@ -10,9 +10,15 @@
 - 已连接正确的 Notion 工作区；首次使用通常需要在客户端完成 Notion 授权。
 - 目标页面上存在标题为 **「使用说明」** 的手册章节（入口页与各分区页）。
 
+## 安装
+
+```bash
+npx skills add wliafe/notion-maintenance-skill
+```
+
 ## 加载技能
 
-将包含 `SKILL.md` 和 `references/` 的完整 `notion-maintenance-skill` 目录，放到当前客户端实际支持的技能位置或通过其技能管理方式导入，再按该客户端要求重新加载。
+也可用手动方式：将包含 `SKILL.md` 和 `references/` 的完整 `notion-maintenance-skill` 目录，放到当前客户端实际支持的技能位置或通过其技能管理方式导入，再按该客户端要求重新加载。
 
 技能遵循 [Agent Skills 规范](https://agentskills.io/specification)。不同客户端的技能发现方式和调用语法不同，不保证所有支持 MCP 的客户端也会自动发现技能。不支持自动加载时，可手动把 `SKILL.md` 及按需引用的说明提供给 AI。
 
